@@ -1,0 +1,162 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND SYSTEM */
+.bg-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.bg-slide.active { opacity: 1; }
+
+.bg-slide::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* LAYOUT SECTION */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 20px;
+    text-align: center;
+}
+
+h1 { font-family: 'Playfair Display', serif; font-size: 4rem; }
+h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 80px; }
+.age-badge { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #ffb7b7; }
+
+/* SCRAPBOOK GRID */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 120px 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.grid-item {
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.grid-item img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    border: 12px solid white;
+    border-bottom: 65px solid white;
+    box-shadow: 10px 20px 30px rgba(0,0,0,0.5);
+}
+
+.grid-item h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #333;
+    position: absolute;
+    bottom: 20px;
+    left: 0; right: 0;
+    font-size: 1,2rem;
+}
+
+/* KUNCI TETAP MIRING */
+.tilt-left { transform: rotate(-5deg); }
+.tilt-right { transform: rotate(5deg); }
+
+.grid-item.tilt-left:hover { transform: rotate(-5deg) scale(1.1); z-index: 10; }
+.grid-item.tilt-right:hover { transform: rotate(5deg) scale(1.1); z-index: 10; }
+
+/* STICKY NOTE SCENE */
+.ucapan-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.sticky-note {
+    background: #fff9c4;
+    color: #333;
+    padding: 40px;
+    width: 350px;
+    min-height: 400px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+    transform: rotate(-3deg);
+    position: relative;
+    text-align: left;
+}
+
+.sticky-note:hover { transform: rotate(-5deg) scale(1); }
+
+.tape {
+    position: absolute;
+    top: -15px; left: 29%;
+    transform: translateX(50%);
+    width: 120px; height: 40px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.ucapan-wrapper2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.sticky-note2 {
+    background: #fff9c4;
+    color: #333;
+    padding: 40px;
+    width: 350px;
+    min-height: 400px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+    transform: rotate(-5deg);
+    position: relative;
+    text-align: left;
+}
+
+
+.sticky-note2:hover { transform: rotate(3deg) scale(1); }
+
+.tape2 {
+    position: absolute;
+    top: -15px; left: 50%;
+    transform: translateX(50%);
+    width: 110px; height: 30px;
+    background: rgba(83, 180, 89, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+
+.signature {
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #d32f2f;
+}

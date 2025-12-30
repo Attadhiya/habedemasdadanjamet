@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gift for You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="myAudio" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="bg-container">
+        <div class="bg-slide active" style="background-image: url('images/herocollage.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('images/kolasememories.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('images/kolasepencapaian.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('images/finalcollage.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('images/herocollage.jpg');"></div>
+    </div>
+
+    <div class="content-wrapper">
+        
+        <section class="section" id="section1">
+            <div class="hero-text" data-aos="fade-up">
+                <h1>HAPPY BIRTHDAY!</h1>
+                <span class="age-badge">16th</span>
+            </div>
+        </section>
+
+        <section class="section" id="section2">
+            <div data-aos="fade-right">
+                <h2>coba pikir apa aja pencapaian khe di 2025?</h2>
+                <h2>gatau? yauda sini aku bantuin</h2>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item tilt-left" data-aos="zoom-in">
+                    <img src="images/foto1.jpg">
+                    <h3>1. ganti hp</h3>
+                </div>
+                <div class="grid-item tilt-right" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/foto2.jpg">
+                    <h3>2. main di soeratin</h3>
+                </div>
+                <div class="grid-item tilt-left" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/foto3.jpg">
+                    <h3>3. keluar zona nyaman (pacaran ma mira)</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="section3">
+            <h2 data-aos="fade-down">apa yang kira kira akan khe dapetin di umur 16?</h2>
+            <div class="grid-container">
+                <div class="grid-item tilt-right" data-aos="zoom-in">
+                    <img src="images/pencapaian1.jpg">
+                    <h3>1. pacar</h3>
+                </div>
+                <div class="grid-item tilt-left" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/pencapaian2.jpg">
+                    <h3>2. dirayain kita :v</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="section4">
+            <div class="ucapan-wrapper">
+                <div class="sticky-note" data-aos="fade-right">
+                    <div class="tape"></div>
+                    <h2>A Little Note</h2>
+                    <p>
+                        hepi habede jamett! <br><br>
+                        w tau website ni ez dibuatnya, cuma w effort buat ngoding ni website. 
+                        Aku gatau mau ngetik apalagi soalnya awk awk dh sering ketemu jirr, 
+                        aku bilang makasi jek dah soalnya kw dah mau jadi sodara beda darah, aku bangga anjay punya temen gek kw :D 
+                        trus harapan awk semoga kw selalu sukses, trus dikasi umur yang barokah dan berguna bagi pertemanan, keluarga, negara dan agama.
+                    </p>
+                    <p class="signature"> -Hatta (yang buat website)</p>
+                        selamat hbd yang ke 16 (please kalo mau main, cepet mandi!) </p>
+                </div>
+
+                <div class="grid-item tilt-right" data-aos="fade-left">
+                    <img src="images/kolasepencapaian.jpg">
+                    <h3>Us Forever</h3>
+                </div>
+            </div>
+     
+            <div class="ucapan-wrapper2">
+                <div class="sticky-note2" data-aos="fade-right">
+                    <div class="tape2"></div>
+                    <h2>A Little Note</h2>
+                    <p>
+                        hepi bertdey fardan <br><br>
+                        semoga di umur kau yang ke 16 ini kau ga akan lupa sama kita, terus semoga circle kita tetep jaya dan semoga nama grupnya bisa ganti jadi 17 pro max aamiin 
+                    </p>
+                    <p class="signature">-Naysila </p>
+                        selamat hbd yang ke 16 (kurang kurangin ngaret) </p>
+                </div>
+
+                <div class="grid-item tilt-right" data-aos="fade-left">
+                    <img src="images/kolasepencapaian2.jpg">
+                    <h3>Us Forever</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="section5">
+            <div class="letter-card" data-aos="zoom-in">
+                <h2 style="color: white; margin-bottom: 20px;">HABEDE JAMETT</h2>
+                <p class="signature" style="color: white;">jgn sampe asing yaa...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200 });
+
+        const sections = document.querySelectorAll('.section');
+        const bgSlides = document.querySelectorAll('.bg-slide');
+
+        window.addEventListener('scroll', () => {
+            let current = 0;
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 400) {
+                    current = index;
+                }
+            });
+
+            bgSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === current) {
+                    slide.classList.add('active');
+                }
+            });
+        });
+
+        const audio = document.getElementById("myAudio");
+        const playMusic = () => {
+            audio.play().catch(e => console.log("Play blocked"));
+            window.removeEventListener('click', playMusic);
+            window.removeEventListener('scroll', playMusic);
+            window.removeEventListener('touchstart', playMusic);
+        };
+        window.addEventListener('click', playMusic);
+        window.addEventListener('scroll', playMusic);
+        window.addEventListener('touchstart', playMusic);
+    </script>
+</body>
+</html>
